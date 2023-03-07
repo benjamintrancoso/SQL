@@ -1,0 +1,33 @@
+--Create a clothing store Database
+
+CREATE TABLE clothing_store ( ID INTEGER PRIMARY KEY, item TEXT, color TEXT, size TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "t-shirt", "blue", "medium", 19.98, 7);
+INSERT INTO clothing_store VALUES (2, "hoodie","grey", "large", 29.98, 6);
+INSERT INTO clothing_store VALUES (3, "socks","white", "small", 8.98, 3);
+INSERT INTO clothing_store VALUES (4, "gloves","black", "large", 24.98, 5);
+INSERT INTO clothing_store VALUES (5, "collar shirt","white", "medium", 29.98, 4);
+INSERT INTO clothing_store VALUES (6, "beanie","brown", "medium", 9.89, 8);
+INSERT INTO clothing_store VALUES (7, "long sleeve","white", "small", 19.98, 9);
+INSERT INTO clothing_store VALUES (8, "jacket","black", "extra large", 34.98, 5);
+INSERT INTO clothing_store VALUES (9, "cap","white", "medium", 24.98, 7);
+INSERT INTO clothing_store VALUES (10, "cardigan","brown", "medium", 24.89, 5);
+INSERT INTO clothing_store VALUES (11, "flannel","brown", "medium", 24.89, 8);
+INSERT INTO clothing_store VALUES (12, "swim shorts","white", "medium", 19.98, 9);
+INSERT INTO clothing_store VALUES (13, "sweater","black", "large", 24.98, 6);
+INSERT INTO clothing_store VALUES (14, "dress","white", "large", 29.98, 7);
+INSERT INTO clothing_store VALUES (15, "coat","brown", "medium", 44.89, 8);
+
+-- Display the database by price
+SELECT * FROM clothing_store 
+ORDER BY price;
+
+-- Calculate the average price of all white items
+SELECT AVG(price) 
+FROM clothing_store 
+WHERE color is "white";
+
+-- What items sold 6 or more times?
+SELECT item, quantity 
+FROM clothing_Store 
+WHERE quantity >= 8
