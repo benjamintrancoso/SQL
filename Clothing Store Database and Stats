@@ -1,0 +1,34 @@
+/* Create a clothing store database */
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item TEXT, color TEXT, size TEXT, price INTEGER, sold INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "t-shirt", "green", "medium", 19.98, 7);
+INSERT INTO clothing_store VALUES (2, "hoodie","blue", "large", 29.98, 6);
+INSERT INTO clothing_store VALUES (3, "socks","brown", "small", 8.98, 3);
+INSERT INTO clothing_store VALUES (4, "gloves","black", "large", 24.98, 5);
+INSERT INTO clothing_store VALUES (5, "collar shirt","white", "medium", 29.98, 4);
+INSERT INTO clothing_store VALUES (6, "beanie","brown", "medium", 9.89, 8);
+INSERT INTO clothing_store VALUES (7, "long sleeve","white", "small", 19.98, 9);
+INSERT INTO clothing_store VALUES (8, "jacket","black", "extra large", 34.98, 5);
+INSERT INTO clothing_store VALUES (9, "cap","white", "medium", 24.98, 7);
+INSERT INTO clothing_store VALUES (10, "cardigan","brown", "medium", 24.89, 5);
+INSERT INTO clothing_store VALUES (11, "flannel","brown", "medium", 24.89, 8);
+INSERT INTO clothing_store VALUES (12, "swim shorts","white", "medium", 19.98, 9);
+INSERT INTO clothing_store VALUES (13, "sweater","black", "large", 24.98, 6);
+INSERT INTO clothing_store VALUES (14, "dress","white", "large", 29.98, 7);
+INSERT INTO clothing_store VALUES (15, "coat","brown", "medium", 44.89, 8);
+
+/* Display the database by price */
+SELECT * FROM clothing_store 
+ORDER BY price;
+
+/* Calculate the average price of all medium sized items */
+SELECT AVG(price) 
+FROM clothing_store 
+WHERE size "medium";
+
+/* What were the top 3 sold items? */
+SELECT item, sold
+FROM clothing_Store 
+ORDER BY sold desc 
+LIMIT 3;
