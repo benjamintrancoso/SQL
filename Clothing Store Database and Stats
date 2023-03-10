@@ -1,6 +1,6 @@
 /* Create a clothing store database */
 
-CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item TEXT, color TEXT, size TEXT, price DECIMAL, sold INTEGER);
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item TEXT, color TEXT, size TEXT, price INTEGER, sold INTEGER);
 
 INSERT INTO clothing_store VALUES (1, "t-shirt", "green", "medium", 19.98, 7);
 INSERT INTO clothing_store VALUES (2, "hoodie","blue", "large", 29.98, 6);
