@@ -1,0 +1,58 @@
+CREATE TABLE sales(
+id INTEGER PRIMARY KEY, 
+transaction_date TEXT, 
+product TEXT, 
+price INTEGER, 
+payment_type TEXT, 
+name TEXT
+);
+
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Chair',9.98,'Mastercard','Michelle R.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Dinning Table',298.98,'Visa','Chad B.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Desk',148.98,'Mastercard','Marcus T.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/3/23','Couch',498.98,'Visa','Natalia I.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/4/23','Bedside Table',598.98,'Visa','Mike W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/4/23','Bed Frame',1198.98,'American Express','William O.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/4/23','Bookshelf',998.98,'Mastercard','Jennifer F.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Clock',40.98,'Discover','Alfred Y.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/4/23','Chair',78.98,'Visa','Will W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/4/23','Table',438.98,'Visa','Aidan R.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/5/23','Couch',898.98,'Discover','Jacob W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/5/23','Bedside Table',898.98,'Mastercard','Fleur F.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Bed Frame',998.98,'Visa','Paul R.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/5/23','Dinning Table',989.98,'Visa','Matthew W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Chair',48.98,'American Express','Richard R.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/4/23','Bed Frame',798.98,'Visa','Jessica W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/5/23','Chair',34.98,'Mastercard','Federica T.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/6/23','Desk',498.98,'Visa','Gerd W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/6/23','Desk',398.98,'Visa','Georgia W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Bedside Table',498.98,'Visa','Betina B.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/6/23','Bed Frame',598.98,'Visa','Jake I.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/1/23','Couch',898.98,'Discover','Janis W.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/5/23','Desk',298.98,'Visa','Jeremy I.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/6/23','Dinning Table',949.98,'Visa','Asuman Y.');
+INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Chair',45.98,'Visa','Joshua Y.');
+
+/*List the names and total for customers who used a Visa payment type and spent 600.00 or more.
+
+SELECT name, payment_type, price AS total
+FROM sales
+WHERE payment_type = 'Visa'
+GROUP BY name
+HAVING price >= 600.00;
+
+/*Create a Promotion Eligibility Column with the number of people who are or aren't eligible*/
+
+SELECT count(*),
+CASE
+    WHEN price >= 700 THEN '20% Sale'
+    WHEN price < 700 THEN 'Full Price'
+END AS 'Promotion Eligibility'
+FROM SALES
+GROUP BY 'Promotion Eligibility';
+
+/*List the names of customers who spent more than 500.00 using a MASTERCARD or VISA payment method*/
+
+SELECT name, payment_type
+FROM sales
+WHERE payment_type is 'Mastercard' OR 'Visa' AND price > 500.00;
