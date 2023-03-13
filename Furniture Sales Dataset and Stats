@@ -41,15 +41,15 @@ WHERE payment_type = 'Visa'
 GROUP BY name
 HAVING price >= 600.00;
 
-/*Create a Promotion Eligibility Column with the number of people who are or aren't eligible*/
+/*Create a Sale Promotion Eligibility column with the number of people who are or aren't eligible*/
 
 SELECT count(*),
 CASE
-    WHEN price >= 700 THEN '20% Sale'
-    WHEN price < 700 THEN 'Full Price'
-END AS 'Promotion Eligibility'
+    WHEN price >= 700 THEN 'Eligible'
+    WHEN price < 700 THEN 'Not Eligible'
+END AS 'Sale Promotion Eligibility'
 FROM SALES
-GROUP BY 'Promotion Eligibility';
+GROUP BY 'Sale Promotion Eligibility';
 
 /*List the names of customers who spent more than 500.00 using a MASTERCARD or VISA payment method*/
 
