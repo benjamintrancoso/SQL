@@ -18,11 +18,11 @@ INSERT INTO clothing_store VALUES (13, "sweater","black", "large", 24.98, 6);
 INSERT INTO clothing_store VALUES (14, "dress","white", "large", 29.98, 7);
 INSERT INTO clothing_store VALUES (15, "coat","brown", "medium", 44.89, 8);
 
-/* Display the database by price */
+/* Display the database by price. */
 SELECT * FROM clothing_store 
 ORDER BY price;
 
-/* Calculate the average price of all medium sized items */
+/* Calculate the average price of all medium sized items. */
 SELECT AVG(price) 
 FROM clothing_store 
 WHERE size "medium";
