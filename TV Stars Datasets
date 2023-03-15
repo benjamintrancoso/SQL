@@ -3,27 +3,27 @@ id INTEGER PRIMARY KEY AUTOINCREMENT,
 full_name TEXT,
 age INTEGER);
  
-INSERT INTO tv_stars (full_name, age) VALUES ("kit harrington", "36");
-INSERT INTO tv_stars (full_name, age) VALUES ("michael fassbender", "45");
-INSERT INTO tv_stars (full_name, age) VALUES ("rose leslie", "36");
-INSERT INTO tv_stars (full_name, age) VALUES ("alicia vikander", "34");
-INSERT INTO tv_stars (full_name, age) VALUES ("ryan reynolds", "46");
+INSERT INTO tv_stars (full_name, age) VALUES ('kit harrington', '36');
+INSERT INTO tv_stars (full_name, age) VALUES ('michael fassbender', '45');
+INSERT INTO tv_stars (full_name, age) VALUES ('rose leslie', '36');
+INSERT INTO tv_stars (full_name, age) VALUES ('alicia vikander', '34');
+INSERT INTO tv_stars (full_name, age) VALUES ('ryan reynolds', '46');
 
 CREATE table movies_shows (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 person_id INTEGER,
 movie_title TEXT);
     
-INSERT INTO movies_shows (person_id, movie_title) VALUES (1, "pompeii");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (1, "game of thrones");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (2, "prometheus");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (2, "the snowman");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (3, "morgan");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (3, "now is good");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (3, "game of thrones");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (4, "ex machina");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (4, "tomb raider");
-INSERT INTO movies_shows (person_id, movie_title) VALUES (5, "6 underground");
+INSERT INTO movies_shows (person_id, movie_title) VALUES (1, 'pompeii');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (1, 'game of thrones');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (2, 'prometheus');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (2, 'the snowman');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (3, 'morgan');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (3, 'now is good');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (3, 'game of thrones');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (4, 'ex machina');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (4, 'tomb raider');
+INSERT INTO movies_shows (person_id, movie_title) VALUES (5, '6 underground');
 
 CREATE table relationship (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
