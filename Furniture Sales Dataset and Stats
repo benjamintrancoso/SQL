@@ -56,3 +56,9 @@ GROUP BY 'Sale Promotion Eligibility';
 SELECT name, payment_type
 FROM sales
 WHERE payment_type is 'Mastercard' OR 'Visa' AND price > 500.00;
+
+/* List the count of all customers who used a Visa payment method and the total of all their purchases. */
+
+SELECT count(*), payment_type, sum(price) AS total
+FROM sales
+WHERE payment_type = 'Visa'
