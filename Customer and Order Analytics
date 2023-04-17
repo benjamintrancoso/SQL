@@ -1,6 +1,6 @@
 In this SQL, I am querying a database with multiple tables in it to quantify statistics about customer and order data. 
 
-/* How many orders were placed in January? Remember to filter out the blank and incorrect order IDs */
+/* How many orders were placed in January? Filter out the blank and incorrect order IDs */
 
 SELECT count(orderID) 
 FROM BIT_DB.JanSales
@@ -51,13 +51,13 @@ GROUP BY product, price
 ORDER BY price ASC
 LIMIT 1;
 
-/* What is the total revenue for each product sold in January? (Revenue can be calculated using the number of products sold and the price of the products). */
+/* What is the total revenue for each product sold in January? */
 
 SELECT distinct sum(quantity)*price AS revenue, product
 FROM BIT_DB.JanSales
 GROUP BY product;
 
-/* Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue? */
+/* Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold? What was the total revenue? */
 
 SELECT product, sum(quantity), sum(quantity)*price AS revenue
 FROM BIT_DB.FebSales
@@ -81,7 +81,7 @@ FROM BIT_DB.FebSales
 WHERE location like '%Los Angeles%'
 GROUP BY product;
 
-/* Which locations in New York received at least 3 orders in January, and how many orders did they each receive? (Hint: use HAVING). */
+/* Which locations in New York received at least 3 orders in January, and how many orders did they each receive? */
 
 SELECT distinct location, count(orderID)
 FROM BIT_DB.JanSales
@@ -98,7 +98,7 @@ FROM BIT_DB.FebSales
 WHERE Product like '%headphone%'
 GROUP BY Product;
 
-/* What was the average amount spent per account in February? (Hints: For this question, we want the average amount spent / number of accounts, not the amount spent by each account. To multiply, you can use the * symbol, and to divide, you can use the / symbol.) */
+/* What was the average amount spent per account in February?by each account */
 
 SELECT sum(quantity*price)/count(cust.acctnum) AS avg_amount_per_acct
 FROM BIT_DB.FebSales feb
@@ -118,7 +118,7 @@ ON FEB.orderid=cust.order_id
 WHERE length(orderid) = 6 
 AND orderid <> 'Order ID'
 
-/* What was the average quantity of products purchased per account in February? (Hint: just like question 3, we want the overall average, not the average for each account individually). */
+/* What was the average quantity of products purchased per account in February? */
 
 SELECT sum(quantity)/count(cust.acctnum) AS avg_product_quantity_per_acc
 FROM BIT_DB.FebSales feb
