@@ -1,24 +1,24 @@
 /* In this PostgreSQL code, I'm querying a database that's holding Nexflix data to answer questions about the data. */
 
-/* How many movie titles are there in the database? (movies only, not tv shows) */
+/* Counted the amount of movie titles in the database */
 
 SELECT count(*)
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
 WHERE type = 'movie';
 
-/* When was the most recent batch of tv shows and/or movies added to the database? */
+/* Selected the most recent batch of tv shows and/or movies added to the database */
 
 SELECT max(date(date_added))
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info";
 
 
-/* List all the movies and tv shows in alphabetical order. */
+/* Listed all the movies and tv shows in alphabetical order */
 
 SELECT title
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
 ORDER BY title asc;
 
-/* Who was the Director for the movie Bright Star? */
+/* Selected the Director for the movie Bright Star */
 
 SELECT director
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" titles
@@ -26,7 +26,7 @@ JOIN "CharlotteChaze/BreakIntoTech"."netflix_people" people
 ON titles.show_id = people.show_id
 WHERE title = 'Bright Star';
 
-/* What is the oldest movie in the database and what year was it made? */
+/* Selected the oldest movie in the database and the year it was made */
 
 select title, release_year
 FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
