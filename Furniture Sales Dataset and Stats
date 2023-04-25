@@ -33,7 +33,7 @@ INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/5
 INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/6/23','Dinning Table',949.98,'Visa','Asuman Y.');
 INSERT INTO sales(transaction_date,product,price,payment_type,name) VALUES ('1/2/23','Chair',45.98,'Visa','Joshua Y.');
 
-/* List the names and total amount paid for customers who used a Visa payment type and spent 600.00 or more. */
+/* Listed the names and total amount paid for customers who used a Visa payment type and spent 600.00 or more */
 
 SELECT name, payment_type, price AS total
 FROM sales
@@ -41,7 +41,7 @@ WHERE payment_type = 'Visa'
 GROUP BY name
 HAVING price >= 600.00;
 
-/* Create a Sale Promotion Eligibility column with the number of people who are or aren't eligible. */
+/* Created a Sale Promotion Eligibility column with the number of people who are or aren't eligible */
 
 SELECT count(*),
 CASE
@@ -51,13 +51,13 @@ END AS 'Sale Promotion Eligibility'
 FROM SALES
 GROUP BY 'Sale Promotion Eligibility';
 
-/* List the names of customers who spent more than 500.00 using a MASTERCARD or VISA payment method. */
+/* Listed the names of customers who spent more than 500.00 using a MASTERCARD or VISA payment method */
 
 SELECT name, payment_type
 FROM sales
 WHERE payment_type is 'Mastercard' OR 'Visa' AND price > 500.00;
 
-/* List the count of all customers who used a Visa payment method and the total of all their purchases. */
+/* Listed the count of all customers who used a Visa payment method and the total of all their purchases */
 
 SELECT count(*), payment_type, sum(price) AS total
 FROM sales
