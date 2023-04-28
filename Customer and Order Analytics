@@ -1,6 +1,6 @@
 In this SQL, I am querying a database with multiple tables in it to quantify statistics about customer and order data. 
 
-/* How many orders were placed in January? Filter out the blank and incorrect order IDs */
+/* How many orders were placed in January? */
 
 SELECT count(orderID) 
 FROM BIT_DB.JanSales
@@ -34,14 +34,16 @@ WHERE price in (SELECT min(price) FROM BIT_DB.JanSales);
 
 SELECT distinct product, price
 FROM BIT_DB.JanSales
-ORDER BY price ASC LIMIT 1;
+ORDER BY price ASC 
+LIMIT 1;
 
 /* Or */
 
 SELECT distinct product, MIN(price) 
 FROM BIT_DB.JanSales 
 GROUP BY product, price 
-ORDER BY price ASC LIMIT 1;
+ORDER BY price ASC 
+LIMIT 1;
 
 /* Or */
 
